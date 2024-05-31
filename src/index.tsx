@@ -39,6 +39,7 @@ function Nothing() {
               <option>Mumbai</option>
               <option>Chennai</option>
               <option>Coimbatore</option>
+              <option>Coimbatore</option>
             </Form.Select>
           </Form>
           <Button className='bg-danger'>
