@@ -76,14 +76,8 @@ function Nothing() {
           <Card.Img variant="top" src={IMAGES.Card_Img4}
           />
         </Card>
-        <Card>
-          <Card.Img variant="top" src={IMAGES.Card_Img4}
-          />
-        </Card>
-        <Card>
-          <Card.Img variant="top" src={IMAGES.Card_Img4}
-          />
-        </Card>
+     
+        
       </Container>
     </Container>
   );
