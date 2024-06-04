@@ -62,18 +62,18 @@ function Nothing() {
           <Card.Img src={IMAGES.Card_Img1} />
 
         </Card>
-        <Card>
-          <Card.Img variant="top" src={IMAGES.Card_Img2} />
+        <Card style={{ width: '15rem' }}>
+          <Card.Img  src={IMAGES.Card_Img2} />
         </Card>
-        <Card>
-          <Card.Img variant="top" src={IMAGES.Card_Img3} />
+        <Card style={{ width: '15rem' }}>
+          <Card.Img  src={IMAGES.Card_Img3} />
         </Card>
-        <Card>
-          <Card.Img variant="top" src={IMAGES.Card_Img4}
+        <Card style={{ width: '15rem' }}>
+          <Card.Img  src={IMAGES.Card_Img4}
           />
         </Card>
-        <Card>
-          <Card.Img variant="top" src={IMAGES.Card_Img4}
+        <Card style={{ width: '15rem' }}>
+          <Card.Img  src={IMAGES.Card_Img4}
           />
         </Card>
      
