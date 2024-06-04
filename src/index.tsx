@@ -1,23 +1,11 @@
-import { Button, Card, CardFooter, Form, NavLink } from 'react-bootstrap';
+import { Button, Card, Form, NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { IMAGES } from './constants';
 import { GrMenu } from "react-icons/gr";
-import { GiRoundStar } from "react-icons/gi";
-import { AiFillLike } from "react-icons/ai";
-import './App.css'
-import { IconType } from 'react-icons';
-
-interface ShowsModel {
-  image: string,
-  ratingIcon: IconType,
-  rating: string,
-  likes: string,
-  percentageVote: string,
-}
 
 function Nothing() {
-  // const showsData: ShowsModel[] = [{ image: IMAGES.Card_Img1, ratingIcon: <GiRoundStar size={20} color='#e6537c' />, rating: '9/10 ', likes: '10.0k', percentageVote: '70%' }]
+
   return (
     <Container fluid>
       <Container fluid>
@@ -79,6 +67,14 @@ function Nothing() {
         </Card>
         <Card>
           <Card.Img variant="top" src={IMAGES.Card_Img3} />
+        </Card>
+        <Card>
+          <Card.Img variant="top" src={IMAGES.Card_Img4}
+          />
+        </Card>
+        <Card>
+          <Card.Img variant="top" src={IMAGES.Card_Img4}
+          />
         </Card>
         <Card>
           <Card.Img variant="top" src={IMAGES.Card_Img4}
