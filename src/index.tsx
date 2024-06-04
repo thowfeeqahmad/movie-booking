@@ -1,8 +1,9 @@
-import { Button, Card, Form, NavLink } from 'react-bootstrap';
+import { Button, Card, CardFooter,  Form, NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { IMAGES } from './constants';
 import { GrMenu } from "react-icons/gr";
+import { TiStarFullOutline } from "react-icons/ti";
 
 function Nothing() {
 
@@ -26,7 +27,6 @@ function Nothing() {
             <Form.Select as={'select'}>
               <option>Mumbai</option>
               <option>Chennai</option>
-              <option>Coimbatore</option>
               <option>Coimbatore</option>
             </Form.Select>
           </Form>
@@ -58,26 +58,44 @@ function Nothing() {
 
       <Container style={{ width: '180rem' }} className='d-flex mt-5 gap-3 justify-content-center'>
 
-        <Card style={{ width: '15rem' }}>
+        <Card style={{ width: '16rem' }}>
           <Card.Img src={IMAGES.Card_Img1} />
+          <CardFooter className='bg-dark text-white'>
+            hello
+          </CardFooter>
+        </Card>
 
+        <Card style={{ width: '15.7rem' } }>
+          <Card.Img src={IMAGES.Card_Img2} />
+          <CardFooter className='bg-dark text-white'>
+          <TiStarFullOutline  color='#ff737e'/>hello
+          </CardFooter>
         </Card>
-        <Card style={{ width: '15rem' }}>
-          <Card.Img  src={IMAGES.Card_Img2} />
+
+        <Card style={{ width: '16rem' }}>
+          <Card.Img src={IMAGES.Card_Img3} />
+          <CardFooter className='bg-dark text-white'>
+            hello
+          </CardFooter>
         </Card>
-        <Card style={{ width: '15rem' }}>
-          <Card.Img  src={IMAGES.Card_Img3} />
-        </Card>
-        <Card style={{ width: '15rem' }}>
-          <Card.Img  src={IMAGES.Card_Img4}
+
+        <Card style={{ width: '16rem' }}>
+          <Card.Img src={IMAGES.Card_Img4}
           />
+           <CardFooter className='bg-dark text-white'>
+            hello
+          </CardFooter>
         </Card>
-        <Card style={{ width: '15rem' }}>
-          <Card.Img  src={IMAGES.Card_Img4}
+
+        <Card style={{ width: '16rem' }}>
+          <Card.Img src={IMAGES.Card_Img}
           />
+           <CardFooter className='bg-dark text-white'>
+            hello
+          </CardFooter>
         </Card>
-     
-        
+
+
       </Container>
     </Container>
   );
