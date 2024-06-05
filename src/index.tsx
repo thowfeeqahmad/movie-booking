@@ -1,4 +1,4 @@
-import { Button, Card, CardFooter, CardImg, Form, NavLink } from 'react-bootstrap';
+import { Button, Card, CardFooter, CardGroup, CardImg, Form, NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { IMAGES } from './constants';
@@ -6,6 +6,7 @@ import { GrMenu } from "react-icons/gr";
 import { IconType } from 'react-icons';
 import icon from './constants/icon';
 
+// interfaces starting######
 interface MoviesModel {
   thumbnaill: string,
   ratingIcon: IconType,
@@ -14,16 +15,52 @@ interface MoviesModel {
   category: string
 }
 
+interface EventsModel {
+  poster: string,
+}
+
+interface CardsModel {
+  cardimg: string,
+  movieName2: string,
+  lang: string
+}
+//interfaces ending#########
+
+
 function Home() {
 
+
+  //thumbnais starting
   const movie: MoviesModel[] = [
-    { thumbnaill: IMAGES.Card_Img4, ratingIcon: icon.RatingStar, ratingPercentage: "9/10", movieName: "Mr & Mrs Mahi", category: "Love/Action" },
+    { thumbnaill: IMAGES.Card_Img, ratingIcon: icon.RatingStar, ratingPercentage: "9/10", movieName: "Mr & Mrs Mahi", category: "Love/Action" },
     { thumbnaill: IMAGES.Card_Img1, ratingIcon: icon.RatingStar, ratingPercentage: "3/10", movieName: "Aranmanai-4", category: "Horror/Thriller" },
     { thumbnaill: IMAGES.Card_Img2, ratingIcon: icon.RatingStar, ratingPercentage: "5/10", movieName: "Hit list", category: "Thriller/Action" },
     { thumbnaill: IMAGES.Card_Img3, ratingIcon: icon.RatingStar, ratingPercentage: "7/10", movieName: "PT sir", category: "Sports/Action" },
-    { thumbnaill: IMAGES.Card_Img, ratingIcon: icon.RatingStar, ratingPercentage: "7.3/10", movieName: "Garudan", category: "Action/Thriller" },
-    
+    { thumbnaill: IMAGES.Card_Img4, ratingIcon: icon.RatingStar, ratingPercentage: "7.3/10", movieName: "Garudan", category: "Action/Thriller" },
+    //thumbnails End
   ]
+
+
+  //posters strating
+  const event: EventsModel[] = [
+    { poster: IMAGES.P1 },
+    { poster: IMAGES.P2 },
+    { poster: IMAGES.P3 },
+    { poster: IMAGES.P4 },
+    //posters ending 
+
+
+  ]
+  const cntblack: CardsModel[] = [
+    { cardimg: IMAGES.B1, movieName2: "hevfkv", lang: "asf" },
+    { cardimg: IMAGES.B2, movieName2: "sc", lang: "asdf" },
+    { cardimg: IMAGES.B3, movieName2: "cc", lang: "ds" },
+    { cardimg: IMAGES.B4, movieName2: "cd", lang: "dd" },
+    { cardimg: IMAGES.B5, movieName2: "f", lang: "awwf" }
+
+  ]
+
+
 
   return (
     <Container fluid>
@@ -75,17 +112,17 @@ function Home() {
 
       <Container>
         <div>
-          <h4></h4>
+          <h4 className='mt-5'>Recommended Movies</h4>
         </div>
       </Container>
 
-     <Container className='d-flex gap-3 mt-5'>
+      <Container className='d-flex gap-3 mt-2'>
         {
           movie.map((data, index) => (
-            <Card style={{ width: '17rem' }} key={index}>
+            <Card style={{ width: '17rem' }} key={index} className='border-0'>
               <Card.Img src={data.thumbnaill} />
               <CardFooter className='bg-dark text-white'>
-                {<data.ratingIcon color="#fd395d"/>}
+                {<data.ratingIcon color="#fd395d" />}
                 <text>{data.ratingPercentage}</text>
               </CardFooter>
               <div>
@@ -97,14 +134,48 @@ function Home() {
             </Card>
           ))
         }
-        </Container>
+      </Container>
 
-     
+
       <Container>
         <Card className='mt-5'>
           <CardImg
             src={IMAGES.Banner} />
         </Card>
+      </Container>
+      <Container>
+        <h4 className='mt-5'>The Best Of Live Events</h4>
+      </Container>
+      <Container className='d-flex gap-3'>
+        {
+          event.map((data, index) => (
+            <Card style={{ width: '17rem' }} key={index} className='border-0 mt-3'>
+              <Card.Img src={data.poster} />
+            </Card>
+          ))
+        }
+      </Container>
+
+
+
+
+
+
+      <Container fluid className='d-flex  gap-3 mt-5 text-white' style={{backgroundColor:'#2c2c4d'}}>
+        <div className=''>
+          <h3 className=''>PREMIERE</h3>
+          <p>Watch New Movies At Home, every friday</p>
+        </div>
+
+        {
+          cntblack.map((data, index) => (
+
+            <Card style={{ width: '17rem' }} key={index} className='border-0 justify-content-center mt-5'>
+              <Card.Img src={data.cardimg} />
+
+            </Card>
+          ))
+        }
       </Container>
 
     </Container>
