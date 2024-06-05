@@ -1,10 +1,11 @@
-import { Button, Card, CardFooter, CardGroup, CardImg, Form, NavLink } from 'react-bootstrap';
+import { Button, Card, CardFooter,  CardImg, Form, NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { IMAGES } from './constants';
 import { GrMenu } from "react-icons/gr";
 import { IconType } from 'react-icons';
 import icon from './constants/icon';
+
 
 // interfaces starting######
 interface MoviesModel {
@@ -110,6 +111,7 @@ function Home() {
         </div>
       </Container>
 
+
       <Container>
         <div>
           <h4 className='mt-5'>Recommended Movies</h4>
@@ -156,33 +158,24 @@ function Home() {
         }
       </Container>
 
-
-
-
-
-
-      <Container fluid className='d-flex  gap-3 mt-5 text-white' style={{backgroundColor:'#2c2c4d'}}>
-        <div className=''>
-          <h3 className=''>PREMIERE</h3>
-          <p>Watch New Movies At Home, every friday</p>
-        </div>
-
-        {
+      <Container fluid className='d-flex  gap-3 mt-5 text-white justify-content-center' style={{backgroundColor:'#2c2c4d'}}>
+              {
           cntblack.map((data, index) => (
 
-            <Card style={{ width: '17rem' }} key={index} className='border-0 justify-content-center mt-5'>
+            <Card style={{ width: '17rem' }} key={index} className='border-0 mt-5'>
               <Card.Img src={data.cardimg} />
 
             </Card>
           ))
         }
       </Container>
-
+     <Container className='justify-content-center'>
+     
+     </Container>
     </Container>
 
   );
 }
-
 
 export default Home;
 

@@ -19,6 +19,8 @@
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0",
     "react-icons": "^5.2.1",
+    "save": "^2.9.0",
+    "style": "^0.0.3",
     "toilet": "^1.0.7"
   },
   "devDependencies": {
