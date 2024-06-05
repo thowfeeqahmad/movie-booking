@@ -5,7 +5,11 @@ export const IMAGES = {
   Card_Img2:"/assets/imageC.png",
   Card_Img3:"/assets/imageD.png",
   Card_Img4:"/assets/imageE.png",
-  Favicon:"/assets/fav.png"
+  Favicon:"/assets/fav.png",
+  Banner:"/assets/banner.png",
+  C1:"/assets/crsl1.png",
+  C2:"/assets/crsl2.png",
+  C3:"/assets/crsl3.png"
   
 
 };

@@ -1,9 +1,10 @@
-import Nothing from "./index";
+import Home from "./index";
 import "./App.css";
 
 
 
+
 function App() {
-  return <Nothing />;
+  return <Home />;
 }
 export default App;

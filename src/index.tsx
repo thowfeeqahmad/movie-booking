@@ -1,11 +1,29 @@
-import { Button, Card, CardFooter,  Form, NavLink } from 'react-bootstrap';
+import { Button, Card, CardFooter, CardImg, Form, NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { IMAGES } from './constants';
 import { GrMenu } from "react-icons/gr";
-import { TiStarFullOutline } from "react-icons/ti";
+import { IconType } from 'react-icons';
+import icon from './constants/icon';
 
-function Nothing() {
+interface MoviesModel {
+  thumbnaill: string,
+  ratingIcon: IconType,
+  ratingPercentage: string,
+  movieName: string,
+  category: string
+}
+
+function Home() {
+
+  const movie: MoviesModel[] = [
+    { thumbnaill: IMAGES.Card_Img4, ratingIcon: icon.RatingStar, ratingPercentage: "9/10", movieName: "Mr & Mrs Mahi", category: "Love/Action" },
+    { thumbnaill: IMAGES.Card_Img1, ratingIcon: icon.RatingStar, ratingPercentage: "3/10", movieName: "Aranmanai-4", category: "Horror/Thriller" },
+    { thumbnaill: IMAGES.Card_Img2, ratingIcon: icon.RatingStar, ratingPercentage: "5/10", movieName: "Hit list", category: "Thriller/Action" },
+    { thumbnaill: IMAGES.Card_Img3, ratingIcon: icon.RatingStar, ratingPercentage: "7/10", movieName: "PT sir", category: "Sports/Action" },
+    { thumbnaill: IMAGES.Card_Img, ratingIcon: icon.RatingStar, ratingPercentage: "7.3/10", movieName: "Garudan", category: "Action/Thriller" },
+    
+  ]
 
   return (
     <Container fluid>
@@ -38,7 +56,7 @@ function Nothing() {
       </Container>
       <Container fluid style={{ backgroundColor: '#F5F5F5' }}>
         <div className='mx-5 ms-5'>
-          <Navbar className=' gap-3 justify-content-start mt-3 '  >
+          <Navbar className=' gap-3 justify-content-start mt-1 '  >
             <NavLink><small>Movies</small></NavLink>
             <NavLink ><small>Stream</small></NavLink>
             <NavLink ><small>Events</small></NavLink>
@@ -55,51 +73,46 @@ function Nothing() {
         </div>
       </Container>
 
-
-      <Container style={{ width: '180rem' }} className='d-flex mt-5 gap-3 justify-content-center'>
-
-        <Card style={{ width: '16rem' }}>
-          <Card.Img src={IMAGES.Card_Img1} />
-          <CardFooter className='bg-dark text-white'>
-            hello
-          </CardFooter>
-        </Card>
-
-        <Card style={{ width: '15.7rem' } }>
-          <Card.Img src={IMAGES.Card_Img2} />
-          <CardFooter className='bg-dark text-white'>
-          <TiStarFullOutline  color='#ff737e'/>hello
-          </CardFooter>
-        </Card>
-
-        <Card style={{ width: '16rem' }}>
-          <Card.Img src={IMAGES.Card_Img3} />
-          <CardFooter className='bg-dark text-white'>
-            hello
-          </CardFooter>
-        </Card>
-
-        <Card style={{ width: '16rem' }}>
-          <Card.Img src={IMAGES.Card_Img4}
-          />
-           <CardFooter className='bg-dark text-white'>
-            hello
-          </CardFooter>
-        </Card>
-
-        <Card style={{ width: '16rem' }}>
-          <Card.Img src={IMAGES.Card_Img}
-          />
-           <CardFooter className='bg-dark text-white'>
-            hello
-          </CardFooter>
-        </Card>
-
-
+      <Container>
+        <div>
+          <h4></h4>
+        </div>
       </Container>
+
+     <Container className='d-flex gap-3 mt-5'>
+        {
+          movie.map((data, index) => (
+            <Card style={{ width: '17rem' }} key={index}>
+              <Card.Img src={data.thumbnaill} />
+              <CardFooter className='bg-dark text-white'>
+                {<data.ratingIcon color="#fd395d"/>}
+                <text>{data.ratingPercentage}</text>
+              </CardFooter>
+              <div>
+                <h5 className='mt-3 ms-2'>{data.movieName}</h5>
+                <div>
+                  <h6 className='text-secondary ms-2'>{data.category}</h6>
+                </div>
+              </div>
+            </Card>
+          ))
+        }
+        </Container>
+
+     
+      <Container>
+        <Card className='mt-5'>
+          <CardImg
+            src={IMAGES.Banner} />
+        </Card>
+      </Container>
+
     </Container>
+
   );
 }
 
 
-export default Nothing;
+export default Home;
+
+
