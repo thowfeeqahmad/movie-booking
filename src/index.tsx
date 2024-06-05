@@ -68,6 +68,7 @@ function Home() {
               <NavLink><small>Corporates</small></NavLink>
               <NavLink><small>Offers</small></NavLink>
               <NavLink><small>GiftCards</small></NavLink>
+              <NavLink><small>GiftCards</small></NavLink>
             </div>
           </Navbar>
         </div>
