@@ -5,6 +5,7 @@ import { IMAGES } from './constants';
 import { GrMenu } from "react-icons/gr";
 import { IconType } from 'react-icons';
 import icon from './constants/icon';
+import { FaCirclePlay } from "react-icons/fa6";
 
 
 
@@ -25,7 +26,11 @@ interface CardsModel {
   cardimg: string,
   movieName2: string,
   lang: string
+  isTrue?: boolean;
+
 }
+
+
 //interfaces ending#########
 
 
@@ -54,11 +59,11 @@ function Home() {
 
   ]
   const cntblack: CardsModel[] = [
-    { cardimg: IMAGES.B5, movieName2: "GhostBusters", lang: "Hindi/English" },
-    { cardimg: IMAGES.B2, movieName2: "Endeavour", lang: "Tamil/English" },
-    { cardimg: IMAGES.B3, movieName2: "Skins", lang: "Malayalam/English" },
-    { cardimg: IMAGES.B4, movieName2: "Jules", lang: "English" },
-    { cardimg: IMAGES.B1, movieName2: "The Boys", lang: "Tamil" }
+    { cardimg: IMAGES.B5, movieName2: "GhostBusters", lang: "Hindi/English",isTrue: true},
+    { cardimg: IMAGES.B2, movieName2: "Endeavour", lang: "Tamil/English",isTrue: true},
+    { cardimg: IMAGES.B3, movieName2: "Skins", lang: "Malayalam/English",isTrue: true},
+    { cardimg: IMAGES.B4, movieName2: "Jules", lang: "English",isTrue: true},
+    { cardimg: IMAGES.B1, movieName2: "The Boys", lang: "Tamil",isTrue: true}
 
   ]
 
@@ -161,21 +166,34 @@ function Home() {
           ))
         }
       </Container>
-
       <Container fluid className='d-flex flex-column gap-4 mt-5 text-white justify-content-center  p-5' style={{ backgroundColor: '#2c2c4d' }}>
-        <h1 className='ms-5 mt-'><span className='ms-5'>Premiere</span></h1>
-        <p className='ms-5 mb-5'><span className='ms-5'>Brand New Releases,every Friday</span></p>
+        
+      <FaCirclePlay color='#fd395d' size={90} />
+      <div>
+        <h1 className='ms-5 '><span className='ms-5'><strong>PREMIERE</strong></span></h1>
+        <p className='ms-5 '><span className='ms-5'>Watch New movies at home,every Friday</span></p>
+        </div>
+
+       
+
+        <div className='mt-5'>
+          <h3 className='mt-5 ms-5'><span className='ms-5'>PREMIERES</span></h3>
+          <p className='ms-5 mb-5'><span className='ms-5'>Brand New Releases,every Fridaay</span></p>
+          </div>
+          
         <div className='d-flex gap-4 justify-content-center'>
           {
             cntblack.map((data, index) => (
-
-              <Card style={{ width: '14rem', }} key={index} className='border-0 mt-5 ' >
-
-                <Card className="d-flex flex-column h-100">
+              <Card style={{ width: '14rem', }} key={index} className='border-0' >
+                <Card className="d-flex flex-column">
                   <CardImg src={data.cardimg} style={{ height: '25rem' }} />
-                  <Badge bg="danger" className="position-absolute p-2 bottom-0 badge bg-danger justify-content-start me-5" >
-                    <span className='me-4 ms-4'>PREMIERE</span>
-                  </Badge>
+
+                  {data.isTrue  &&  (
+                    <Badge bg="danger" className="position-absolute p-2 bottom-0 badge bg-danger justify-content-start me-5" >
+                      <span className='me-4 ms-4'>PREMIERE</span>
+                    </Badge>
+                  )}
+
                 </Card>
                 <CardFooter style={{ backgroundColor: '#2c2c4d' }} className='text-white'>
                   <h5 className='mt-3'>{data.movieName2}</h5>
@@ -184,11 +202,8 @@ function Home() {
               </Card>
             ))
           }
-
         </div>
       </Container>
-
-
     </Container >
 
   );
