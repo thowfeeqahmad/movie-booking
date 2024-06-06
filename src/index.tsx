@@ -1,10 +1,11 @@
-import { Button, Card, CardFooter,  CardImg, Form, NavLink } from 'react-bootstrap';
+import { Badge, Button, Card, CardFooter, CardImg, Form, NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { IMAGES } from './constants';
 import { GrMenu } from "react-icons/gr";
 import { IconType } from 'react-icons';
 import icon from './constants/icon';
+
 
 
 // interfaces starting######
@@ -53,17 +54,20 @@ function Home() {
 
   ]
   const cntblack: CardsModel[] = [
-    { cardimg: IMAGES.B1, movieName2: "hevfkv", lang: "asf" },
-    { cardimg: IMAGES.B2, movieName2: "sc", lang: "asdf" },
-    { cardimg: IMAGES.B3, movieName2: "cc", lang: "ds" },
-    { cardimg: IMAGES.B4, movieName2: "cd", lang: "dd" },
-    { cardimg: IMAGES.B5, movieName2: "f", lang: "awwf" }
+    { cardimg: IMAGES.B5, movieName2: "GhostBusters", lang: "Hindi/English" },
+    { cardimg: IMAGES.B2, movieName2: "Endeavour", lang: "Tamil/English" },
+    { cardimg: IMAGES.B3, movieName2: "Skins", lang: "Malayalam/English" },
+    { cardimg: IMAGES.B4, movieName2: "Jules", lang: "English" },
+    { cardimg: IMAGES.B1, movieName2: "The Boys", lang: "Tamil" }
 
   ]
 
 
 
   return (
+
+
+
     <Container fluid>
       <Container fluid>
         <Navbar expanded className='d-flex gap-4 justify-content-center'>
@@ -158,23 +162,43 @@ function Home() {
         }
       </Container>
 
-      <Container fluid className='d-flex  gap-3 mt-5 text-white justify-content-center' style={{backgroundColor:'#2c2c4d'}}>
-              {
-          cntblack.map((data, index) => (
+      <Container fluid className='d-flex flex-column gap-4 mt-5 text-white justify-content-center  p-5' style={{ backgroundColor: '#2c2c4d' }}>
+        <h1 className='ms-5 mt-'><span className='ms-5'>Premiere</span></h1>
+        <p className='ms-5 mb-5'><span className='ms-5'>Brand New Releases,every Friday</span></p>
+        <div className='d-flex gap-4 justify-content-center'>
+          {
+            cntblack.map((data, index) => (
 
-            <Card style={{ width: '17rem' }} key={index} className='border-0 mt-5'>
-              <Card.Img src={data.cardimg} />
+              <Card style={{ width: '14rem', }} key={index} className='border-0 mt-5 ' >
 
-            </Card>
-          ))
-        }
+                <Card className="d-flex flex-column h-100">
+                  <CardImg src={data.cardimg} style={{ height: '25rem' }} />
+                  <Badge bg="danger" className="position-absolute p-2 bottom-0 badge bg-danger justify-content-start me-5" >
+                    <span className='me-4 ms-4'>PREMIERE</span>
+                  </Badge>
+                </Card>
+                <CardFooter style={{ backgroundColor: '#2c2c4d' }} className='text-white'>
+                  <h5 className='mt-3'>{data.movieName2}</h5>
+                  <p className=''>{data.lang}</p>
+                </CardFooter>
+              </Card>
+            ))
+          }
+
+        </div>
       </Container>
-     <Container className='justify-content-center'>
-     
-     </Container>
-    </Container>
+
+
+    </Container >
 
   );
+
+
+
+
+
+
+
 }
 
 export default Home;
