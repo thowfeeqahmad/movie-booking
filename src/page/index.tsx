@@ -1,10 +1,10 @@
-import { Badge, Button, Card, CardFooter, CardImg, Carousel, Form, NavLink, Row } from 'react-bootstrap';
+import { Badge, Button, Card, CardFooter, CardImg, Carousel, Form, NavLink } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
-import { IMAGES } from './constants';
+import { IMAGES } from '../constants';
 import { GrMenu } from "react-icons/gr";
 import { IconType } from 'react-icons';
-import icon from './constants/icon';
+import icon from '../constants/icon';
 import { FaCirclePlay } from "react-icons/fa6";
 import { TbBuildingCircus } from "react-icons/tb";
 import { RiCustomerService2Fill } from "react-icons/ri";
@@ -79,7 +79,6 @@ function Home() {
   return (
 
     <Container fluid> {/*-----------------------------------------------------------> Grand parent of all contents starting */}
-    <p>Created by thowfeeq</p>
       <Container fluid>
 
         <Navbar expanded className='d-flex gap-4 justify-content-center'>
