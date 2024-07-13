@@ -290,7 +290,7 @@ function Home() {
               </h6>
             </div>
           </div>
-          <div  className='d-flex  justify-content-center  pt-5  ' style={{ backgroundColor: '#4d4c4b'}}>
+          <div className='d-flex  justify-content-center  pt-5  ' style={{ backgroundColor: '#4d4c4b' }}>
 
             <div className='hover-zoom pb-5 '>
               <a href='www.bookmyshow.com'>
@@ -413,10 +413,10 @@ function Home() {
           <hr />
 
           <a href='www.bookmyshow,com'>
-          <img
-            src={IMAGES.logo2}
-            width={250}
-           />
+            <img
+              src={IMAGES.logo2}
+              width={250}
+            />
           </a>
         </div>
 
@@ -436,7 +436,7 @@ function Home() {
             </a>
 
             <a href='https://www.youtube.com'>
-            <FaYoutube size={30} color='white' className='me-3 mb-5 mt-3' />
+              <FaYoutube size={30} color='white' className='me-3 mb-5 mt-3' />
             </a>
 
             <a href='https://www.pinterest.com'>
